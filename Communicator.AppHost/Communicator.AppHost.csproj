@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0"/>
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IsAspireHost>true</IsAspireHost>
+        <UserSecretsId>acb63644-2c39-4ce9-ab8b-9c464f694ebc</UserSecretsId>
+        <AssemblyName>Communicator.AppHost</AssemblyName>
+        <RootNamespace>Communicator.AppHost</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0"/>
+        <PackageReference Include="Aspire.Hosting.Dapr" Version="9.0.0" />
+        <PackageReference Include="Aspire.Hosting.SqlServer" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Communicator.DocumentApi\Communicator.DocumentApi.csproj" />
+      <ProjectReference Include="..\Communicator.OrchestratorApi\Communicator.OrchestratorApi.csproj" />
+      <ProjectReference Include="..\Communicator.ProducerApi\Communicator.ProducerApi.csproj" />
+      <ProjectReference Include="..\Communicator.TemplateApi\Communicator.TemplateApi.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.Development.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </None>
+      <None Update="appsettings.Local.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </None>
+    </ItemGroup>
+
+</Project>

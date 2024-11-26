@@ -1,0 +1,14 @@
+@Communicator.Producer_HostAddress = http://localhost:5097
+
+POST {{HostAddress}}/produce/orderPlaced
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Id": "{{$random.uuid}}",
+  "OrderId": "{{$random.uuid}}",
+  "TimeStamp": "{{$isoTimestamp}}"
+  
+}
+
+###
